@@ -1,0 +1,76 @@
+data:
+  basea_data_dir: "/home/cheddarjackk/Developer/VAmodel/data/data/data_edit/3_day_data_preprocessed_ext"
+  indicatored_data_dir: "/home/cheddarjackk/Developer/VAmodel/data/data_edit/4_StratApplied_data"
+  training_data_dir: "/home/cheddarjackk/Developer/VAmodel/data/data_training/marked-final"
+  training_data_dir_2: "/home/cheddarjackk/Developer/VAmodel/data/data_training/marked-altered/"
+  inference_data_dir: "/home/cheddarjackk/Developer/VAmodel/data/data_training/run-inference/"
+  inference_results_dir: "/home/cheddarjackk/Developer/VAmodel/data/data_verdict/"
+  debug_dir: "/home/cheddarjackk/Developer/VAmodel/data/debug"
+
+  allowed_values:
+    - 0
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - -2
+    - -3
+    - -4
+    - -5
+    - -6
+    - -7
+    - -8
+
+  features:
+    - Last
+    - unique_id
+
+  label_column:
+    - valuemarker
+    - valuetracker
+
+  batch_size: 1
+  train_val_split: 0.9
+  increase: 0.60
+  multipliers: "off"
+  bg_weight: 0.05
+  seq_length: 2048
+
+model:
+  type: "tcn" # "tcn" or "transformer"
+  d_model: 8
+  dropout: 0.25
+  output_size: 15
+
+  # transformer-specific
+  nhead: 1
+  num_encoder_layers: 1
+  dim_feedforward: 16
+
+  # tcn-specific
+  tcn_kernel_size: 7
+  tcn_num_levels: 25
+  tcn_padding: "same"
+  tcn_channel_growth: false     # *** keep false ***
+  max_dilations: 128
+
+training:
+  epochs: 30
+  patience: 5000
+  learning_rate: 0.005
+  log_every_n_steps: 50
+  save_dir: "/home/cheddarjackk/Developer/VAmodel/models/"
+  backtest_dir: "/home/cheddarjackk/Developer/project_root/models/best_model"
+  checkpoint_dir: "/home/cheddarjackk/Developer/VAmodel/models/checkpoints/"
+  scheduler: "one_cycl"
+  t_max: 1
+  max_lr: 0.005
+  optimizer: "adam"
+  weight_decay: 0.0001
+
+logging:
+  level: "INFO"
+
