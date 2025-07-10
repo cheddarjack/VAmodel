@@ -1,6 +1,6 @@
 # VAmodel
 
-VAmodel is an experimental Python project for exploring reverse stochastic polynomials to derive value-area signals (value areas) in trading. The pipeline covers data preprocessing, model training, and inference, demonstrating a full end-to-end workflow. While this method has not yet produced a profitable edge, the code and structure showcase my approach to using transformer based architecture to identify user marked patterns.
+VAmodel is an experimental Python project for exploring reverse stochastic polynomials to derive value-area signals (value areas) in trading (specifically equity futures). The pipeline covers data preprocessing, model training, and inference, demonstrating a full end-to-end workflow. While this method has not yet produced a profitable edge, the code and structure showcase my approach to using transformer based architecture to identify user marked patterns.
 
 > **Note:** Model checkpoints and actual market data are excluded. Additionally, proprietary marker data (`dev/VA_markers_final.xlsx`) and the detailed preprocessing scripts (`dev/preprocess/valmark/`) are referenced but **excluded** via `.gitignore`. A dummy template (`dev/markers_example.xlsx`) is included to illustrate the expected format.
 
