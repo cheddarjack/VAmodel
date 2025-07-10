@@ -31,15 +31,15 @@ VAmodel/
 │   ├── config.yaml             # Configuration for training and inference
 │   ├── run_training.py         # Training entry point
 │   ├── run_inference.py        # Inference entry point
-│   ├── models/                 # Saved model checkpoints (excluded)
-│   ├── preprocess/             # Preprocessing scripts (valmark generation)
-│   ├── VA_markers_final.xlsx   # Proprietary marker file (excluded)
+│   ├── preprocess/             # Preprocessing scripts (valmark generation, excluded due to market edge)
+│   ├── VA_markers_final.xlsx   # manually curated marker file (excluded from repo)
 │   └── src/
 │       ├── data_loader.py       # I/O and padding utilities
 │       ├── dataset.py           # PyTorch Dataset wrapper
 │       ├── dataset_balanced.py  # Balanced sampling for rare events
 │       ├── model.py             # Architectures: TCN, Transformer, Longformer
 │       └── train_utils.py       # Training loops, loss functions, evaluation
+├── models/                    # Saved model checkpoints (excluded)
 ├── markers_example.xlsx       # Dummy template illustrating marker format
 ├── .gitignore
 └── README.md                  # Project overview (this file)
